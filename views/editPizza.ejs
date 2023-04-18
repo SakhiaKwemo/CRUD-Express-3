@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hub</title>
+</head>
+<body>
+    <h1>Edit Piza</h1>
+    <form method="POST" action="/api/editPizza/<%=chosenPizza%>">
+        <label>
+            Type: 
+            <input name="type" value="<%= pizza.type%>">
+        </label>
+        <label>
+            Size: 
+            <input name="size" value="<%= pizza.size%>">
+        </label>
+        <label>
+            Price: 
+            <input name="price" value="<%= pizza.price%>">
+        </label>
+        <label>
+            Company: 
+            <input name="company" value="<%= pizza.company%>">
+        </label>
+        <label>
+            Pic: 
+            <input name="pic" value="<%= pizza.pic%>">
+        </label>
+        <input type="submit" value="Edit Pizza">
+    </form>
+</body>
+</html>

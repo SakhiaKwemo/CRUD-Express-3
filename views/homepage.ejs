@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Hub</title>
+</head>
+<body>
+    <h1>Welcome To Pizza Hub</h1>
+    <form method="GET" action="/addPizza">
+        <input type="submit" value="Add Pizza">
+    </form>
+    <ul>
+        <% for (const pizza in pizzaList) { %>
+            <li>
+                <img src="<%=pizzaList[pizza].pic%>" style="width: 80px">
+                <%= pizzaList[pizza].type%>
+                <%= pizzaList[pizza].size%>
+                <%= pizzaList[pizza].price%>
+                <%= pizzaList[pizza].company%>
+                <form method="GET" action="/editPizza/<%=pizza%>">
+                    <input type="submit" value="Edit Pizza">
+                </form>
+                <form method="POST" action="/api/deletePizza/<%=pizza%>">
+                    <input type="submit" value="Delete Pizza">
+                </form>
+            </li>
+        <% } %>
+    </ul>
+</body>
+</html>
